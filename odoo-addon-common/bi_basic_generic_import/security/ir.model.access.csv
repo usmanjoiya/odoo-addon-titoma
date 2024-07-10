@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+import_gen_invoice,import_gen_invoice,model_gen_invoice,,1,1,1,1
+import_gen_journal_entry,import_gen_journal_entry,model_gen_journal_entry,,1,1,1,1
+import_account_bank_statement_wizard,import_account_bank_statement_wizard,model_account_bank_statement_wizard,,1,1,1,1
+import_gen_mrp,import_gen_mrp,model_gen_mrp,,1,1,1,1
+import_gen_partner,import_gen_partner,model_gen_partner,,1,1,1,1
+import_gen_salepayment,import_gen_salepayment,model_gen_salepayment,,1,1,1,1
+import_import_picking,import_import_picking,model_import_picking,,1,1,1,1
+import_gen_product,import_gen_product,model_gen_product,,1,1,1,1
+import_gen_purchase,import_gen_purchase,model_gen_purchase,,1,1,1,1
+import_gen_sale,import_gen_sale,model_gen_sale,,1,1,1,1
+import_gen_inv,import_gen_inv,model_gen_inv,,1,1,1,1
+import_gen_suppinfo,import_gen_suppinfo,model_gen_suppinfo,,1,1,1,1
