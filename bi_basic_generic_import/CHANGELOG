@@ -1,0 +1,44 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+
+## [15.0.0.2.2] - 2023/02/21
+### Fixed
+- Fix manufacturer_code field was add in product.template and product.product model
+- Fix create_product and import_product method for set manufacturer_code values
+
+### Added
+- Add views to set manufacturer_code field on product.template and product.product views
+
+
+## [15.0.0.2.1] - 2023/02/21
+### Fixed
+- Fix create_product and import_product method for set product values problems
+
+
+## [15.0.0.2] - 2023/02/17
+### Updated
+- Update create_product and import_product method to get new import fields for create or update reorder rule
+
+
+## [15.0.0.1.3] - 2023/02/16
+### Updated
+- Update import_product method to add new import fields to update product from excel file part
+
+
+## [15.0.0.1.2] - 2023/02/16
+### Updated
+- Update import_product method to add new import fields to create product from excel file part
+
+
+## [15.0.0.1.1] - 2023/02/16
+### Updated
+- Update import_product method to add new import fields to update product from csv file part
+
+
+## [15.0.0.1] - 2023/02/15
+### Updated
+- Update create_product and import_product method to add new import fields to create product from csv file part
