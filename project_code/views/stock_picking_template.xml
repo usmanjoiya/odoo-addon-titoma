@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <!-- Stock Picking Document: picking operation -->
+        <!-- source code:  addons/stock/report/report_stockpicking_operations.xml -->
+        <template id="project_code_report_picking" inherit_id="stock.report_picking">
+            <xpath expr="//div[@name='div_origin']" position="before">
+                <div class="col-auto">
+                    <strong>Project Code:</strong>
+                    <p t-field="o.project_code"/>
+                    <strong>Project Stage:</strong>
+                    <p t-field="o.project_stage"/>
+                </div>
+            </xpath>
+        </template>
+        <!-- Stock Picking Document: delivery slip -->
+        <!-- source code:  addons/stock/report/report_deliveryslip.xml  -->
+        <template id="project_code_report_delivery_document" inherit_id="stock.report_delivery_document">
+            <xpath expr="//div[@name='div_origin']" position="before">
+                <div class="col-auto">
+                    <strong>Project Code:</strong>
+                    <p t-field="o.project_code"/>
+                    <strong>Project Stage:</strong>
+                    <p t-field="o.project_stage"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

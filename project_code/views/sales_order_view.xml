@@ -1,0 +1,16 @@
+<odoo>
+	<data>
+		<!-- Sales Order Form: Add Project Code and Project Stage. -->
+		<record id="view_sales_order_add_project_code_stage" model="ir.ui.view">
+			<field name="name">Sales Order Form with Project Code and Stage</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='payment_term_id']" position="after">
+					<field name="project_code" />
+					<field name="project_stage"/>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <!-- M/O Document:  Add project code and project stage -->
+        <!-- source: addons/mrp/report/mrp_production_templates.xml -->
+        <template id="project_code_in_mrp_document" inherit_id="mrp.report_mrporder">
+            <xpath expr="//table[@class='table table-sm'][1]/thead/tr" position="before">
+                <div class="row mt32 mb32">
+                    <div class="col-3">
+                        <strong>Project Code</strong><br/>
+                        <span t-field="o.project_code"/>
+                    </div>
+                    <div class="col-3">
+                        <strong>Project Stage</strong><br/>
+                        <span t-field="o.project_stage"/>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

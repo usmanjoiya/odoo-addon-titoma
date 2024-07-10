@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        <!-- Invoice Document:  Add project code and project stage -->
+        <template id="report_invoice_document_custom" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[@id='informations']" position="before">
+                <div class="row mt32 o_subtotal_footer_separator">
+                    <div class="col-8"/>
+                    <div class="col-4">
+                        <table class="table table-sm o_main_table border-black">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Project Code</strong></td>
+                                    <td><span t-field="o.project_code"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Project Stage</strong></td>
+                                    <td><span t-field="o.project_stage"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

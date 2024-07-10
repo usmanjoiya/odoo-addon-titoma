@@ -1,0 +1,16 @@
+<odoo>
+	<data>
+        <!-- Purchase Order Form: Add Project Code and Project Stage. -->
+		<record id="view_purchase_order_form_add_project_code_stage" model="ir.ui.view">
+			<field name="name">Add Project Code and Project Stage to the Purchase Order Form</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='partner_id']" position="after">
+					<field name="project_code" string="Project Code"/>
+					<field name="project_stage" string="Project Stage"/>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

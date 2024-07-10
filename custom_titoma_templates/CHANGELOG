@@ -1,0 +1,96 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+
+## [15.0.1.0.2] - 2024/07/05
+### Improved
+- Smaller font
+- Use S/O# in the last line of the template
+
+
+## [15.0.1.0.1] - 2024/06/24
+### Changed
+- Smaller S/O line padding in PDF template
+
+
+## [15.0.1.0] - 2024/06/14
+### Changed
+- Update invoice PDF template
+- Update P/O PDF template
+- Update S/O PDF template
+
+
+## [15.0.0.1.11] - 2024/05/29
+### Changed
+- Change report format of sale order, purchase order and invoice
+
+
+## [15.0.0.1.10] - 2024/04/26
+### Fixed
+- Fix templates set total and subtotal error
+
+
+## [15.0.0.1.9] - 2024/04/26
+### Changed
+- Change CSS setting and templates format
+
+
+## [15.0.0.1.8] - 2024/04/24
+### Added
+- Add CSS file for template
+
+### Changed
+- Change report templates format
+
+
+## [15.0.0.1.7] - 2024/04/22
+### Added
+- Add information to purchase order report
+
+### Changed
+- Change sale order and invoice basic
+
+
+## [15.0.0.1.6] - 2024/04/22
+### Added
+- Add new templates for sale order, purchase order and invoice report format
+
+### Changed
+- Change sale order, purchase order and invoice using basic format
+
+
+## [15.0.0.1.5] - 2024/04/17
+### Changed
+- Change bank_info field to add in res.company model and view
+- Change get bank info path for report views
+
+
+## [15.0.0.1.4] - 2024/03/27
+### Added
+- Add translate file
+
+### Change
+- Change report views format
+
+
+## [15.0.0.1.3] - 2024/03/26
+### Added
+- Add bank info field to account invoice view
+
+
+## [15.0.0.1.2] - 2024/03/26
+### Added
+- Add invoice titoma template report view
+
+
+## [15.0.0.1.1] - 2024/03/26
+### Added
+- Add purchase order titoma template report view
+
+
+## [15.0.0.1] - 2024/03/26
+### Added
+- Add sale order titoma template report view

@@ -1,5 +1,0 @@
-code,name,user,default tax,tag_ids,group,currency,reconsile,depreated
-50103,Plant,Current Assets,Tax 15.00%,Operating Activities,Demo Group1,INR,1,TRUE
-50104,Prepayments,Bank and Cash,Tax 15.00%,,Demo Group2,,TRUE,FALSE
-50105,Long term,Income,,"Financing Activities,Operating Activities",,EUR,0,1
-50106,Equipments,Credit Card,Tax 15.00%,,Demo Group4,USD,1,1
