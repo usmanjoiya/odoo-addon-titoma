@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+        <template id="report_po_titoma_document">
+            <t t-call="custom_titoma_templates.external_layout_titoma">
+                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+                <t t-set="forced_vat" t-value="doc.fiscal_position_id.foreign_vat"/>
+                <t t-set="address">
+                    <div class="text-right small" t-field="doc.company_id.name" />
+                    <div class="text-right small" t-if="doc.company_id.street" t-field="doc.company_id.street" />
+                    <div class="text-right small" t-if="doc.company_id.street2" t-field="doc.company_id.street2" />
+                    <div class="text-right small">
+                        <span t-if="doc.company_id.city" t-field="doc.company_id.city" />
+                        <span t-if="doc.company_id.state_id" t-field="doc.company_id.state_id.code" />
+                        <span t-if="doc.company_id.zip" t-field="doc.company_id.zip" />
+                        <span t-if="doc.company_id.country_id" t-field="doc.company_id.country_id" />
+                    </div>
+                    <div class="text-right small" t-if="doc.company_id.phone" t-field="doc.company_id.phone" />
+                    <div class="text-right small" t-if="doc.company_id.website" t-field="doc.company_id.website" />
+                </t>
+                <t t-set="information_block">
+                    <div class="small" t-if="doc.partner_id.parent_id" t-field="doc.partner_id.parent_id.name" />
+                    <div class="small" t-if="doc.partner_id.street" t-field="doc.partner_id.street" />
+                    <div class="small" t-if="doc.partner_id.street2" t-field="doc.partner_id.street2" />
+                    <div class="small">
+                        <span t-if="doc.partner_id.city" t-field="doc.partner_id.city" />
+                        <span t-if="doc.partner_id.state_id" t-field="doc.partner_id.state_id.code" />
+                        <span t-if="doc.partner_id.zip" t-field="doc.partner_id.zip" />
+                        <span t-if="doc.partner_id.country_id" t-field="doc.partner_id.country_id" />
+                    </div>
+                    <div class="small" t-if="doc.partner_id.phone" t-field="doc.partner_id.phone" />
+                    <div class="small" t-field="doc.partner_id.name" />
+                    <div class="small" t-if="doc.partner_id.email" t-field="doc.partner_id.email" />
+                </t>
+                <div class="page">
+                    <div class="oe_structure"/>
+
+                    <h2 class="mt16">
+                        <div class="col-12 text-center font-weight-bold">
+                            <span>Purchase Order </span><span t-field="doc.name"/>
+                        </div>
+                    </h2>
+
+                    <div t-if="doc.date_order" class="col-auto col-3 mw-100 mb-2 text-right small">
+                        <strong>Date:</strong><span t-field="doc.date_order" t-options='{"widget": "date","format": "dd/MM/yyyy"}'/>
+                    </div>
+
+                    <table class="table titoma_table small">
+                        <thead>
+                            <tr>
+                                <th name="th_item" class="text-center">Item</th>
+                                <th name="th_default_code" class="text-center">TPN</th>
+                                <th name="th_description" class="text-left">Description</th>
+                                <th name="th_quantity" class="text-center">Qty</th>
+                                <th name="th_priceunit" class="text-center">Unit Price</th>
+                                <th name="th_subtotal" class="text-center">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="current_subtotal" t-value="0"/>
+                            <t t-set="item_num" t-value="1"/>
+                            <t t-foreach="doc.order_line" t-as="line">
+                                <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+
+                                <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else 'small'">
+                                    <t t-if="not line.display_type">
+                                        <td name="td_item" class="text-center"><span t-esc="item_num"/></td>
+                                        <td name="td_default_code"><span t-field="line.product_id.default_code"/></td>
+                                        <td name="td_name"><span t-field="line.name"/></td>
+                                        <td name="td_quantity" class="text-right">
+                                            <span t-field="line.product_qty"/>
+                                            <span t-field="line.product_uom"/>
+                                        </td>
+                                        <td name="td_priceunit" class="text-right">
+                                            <span t-field="line.price_unit"/>
+                                        </td>
+                                        <td name="td_subtotal" class="text-right o_price_total">
+                                            <span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                            <span t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+                                        </td>
+                                        <t t-set="item_num" t-value="item_num + 1"/>
+                                    </t>
+                                    <t t-if="line.display_type == 'line_section'">
+                                        <td name="td_section_line" colspan="99">
+                                            <span t-field="line.name"/>
+                                        </td>
+                                        <t t-set="current_section" t-value="line"/>
+                                        <t t-set="current_subtotal" t-value="0"/>
+                                    </t>
+                                    <t t-if="line.display_type == 'line_note'">
+                                        <td name="td_note_line" colspan="99">
+                                            <span t-field="line.name"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <t t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section')">
+                                    <tr class="is-subtotal text-right">
+                                        <td colspan="99" id="subtotal">
+                                            <strong class="mr16">Subtotal</strong>
+                                            <span
+                                                t-esc="current_subtotal"
+                                                t-options='{"widget": "monetary", "display_currency": doc.currency_id}'
+                                            />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <div class="small"><strong>Terms and Conditions</strong></div>
+                    <div class="small" t-if="doc.payment_term_id">Payment Terms: <span t-field="doc.payment_term_id.name" /></div>
+                    <div class="small" t-if="doc.date_planned">Delivery Date: <span t-field="doc.date_planned" t-options='{"widget": "date","format": "dd/MM/yyyy"}' /></div>
+                    <div class="small" t-if="doc.notes">Remark: <span t-field="doc.notes" /></div>
+                    <br />
+                    <br />
+                    <t t-if="doc.picking_type_id.warehouse_id.partner_id">
+                        <t t-set="ship_to" t-value="doc.picking_type_id.warehouse_id.partner_id"/>
+                    </t>
+                    <t t-else="else">
+                        <t t-set="ship_to" t-value="False"/>
+                    </t>
+                    <div class="small" t-if="ship_to"><strong>送貨資訊 Ship To</strong></div>
+                    <div class="small" t-if="ship_to.parent_id">Company Name: <span t-field="ship_to.parent_id.name" /></div>
+                    <div class="small" t-if="ship_to">Address: </div>
+                    <div class="small" t-if="ship_to.street" t-field="ship_to.street" />
+                    <div class="small" t-if="ship_to.street2" t-field="ship_to.street2" />
+                    <div class="small">
+                        <span t-if="ship_to.city" t-field="ship_to.city" />
+                        <span t-if="ship_to.state_id" t-field="ship_to.state_id.code" />
+                        <span t-if="ship_to.zip" t-field="ship_to.zip" />
+                        <span t-if="ship_to.country_id" t-field="ship_to.country_id" />
+                    </div>
+                    <div class="small" t-if="ship_to">Contact: <span t-field="ship_to.name" /></div>
+
+                    <div class="oe_structure"/>
+                </div>
+            </t>
+        </template>
+
+
+        <template id="custom_titoma_templates.report_purchaseorder_titoma">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="custom_titoma_templates.report_po_titoma_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+        <record id="purchase.action_report_purchase_order" model="ir.actions.report">
+            <field name="name">Purchase Order</field>
+            <field name="model">purchase.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">custom_titoma_templates.report_purchaseorder_titoma</field>
+            <field name="report_file">custom_titoma_templates.report_purchaseorder_titoma</field>
+            <field name="paperformat_id" ref="custom_titoma_templates.paperformat_euro_a4_titoma"/>
+            <field name="print_report_name">'Purchase Order - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+            <field name="binding_type">report</field>
+        </record>
+	</data>
+</odoo>

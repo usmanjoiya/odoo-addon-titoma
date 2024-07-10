@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+        <!-- Purchase Order Document: add project code and project stage -->
+        <!-- source: addons/purchase/report/purchase_order_templates.xml -->
+        <template id="report_purchaseorder_document" inherit_id="purchase.report_purchaseorder_document">
+            <xpath expr="//div[@id='informations']" position="before">
+                <div class="row mt32 o_subtotal_footer_separator">
+                    <div class="col-8"/>
+                    <div class="col-4">
+                        <table class="table table-sm o_main_table border-black">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Project Code</strong></td>
+                                    <td><span t-field="o.project_code"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Project Stage</strong></td>
+                                    <td><span t-field="o.project_stage"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <!-- Request for Quotation Document: add project code and project stage -->
+        <!-- source: addons/purchase/report/purchase_order_templates.xml -->
+        <template id="report_purchasequotation_document" inherit_id="purchase.report_purchasequotation_document">
+            <xpath expr="//div[@id='informations']" position="before">
+                <div class="row mt32 o_subtotal_footer_separator">
+                    <div class="col-8"/>
+                    <div class="col-4">
+                        <table class="table table-sm o_main_table border-black">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Project Code</strong></td>
+                                    <td><span t-field="o.project_code"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Project Stage</strong></td>
+                                    <td><span t-field="o.project_stage"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

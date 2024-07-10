@@ -1,0 +1,200 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* project_code
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20230210\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-26 14:32+0000\n"
+"PO-Revision-Date: 2023-02-26 14:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_code
+#: model_terms:ir.ui.view,arch_db:project_code.project_code_report_delivery_document
+#: model_terms:ir.ui.view,arch_db:project_code.project_code_report_picking
+msgid "<strong>Project Code:</strong>"
+msgstr "<strong>專案代號</strong>"
+
+#. module: project_code
+#: model_terms:ir.ui.view,arch_db:project_code.project_code_in_sales_order_document
+#: model_terms:ir.ui.view,arch_db:project_code.report_invoice_document_custom
+#: model_terms:ir.ui.view,arch_db:project_code.report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:project_code.report_purchasequotation_document
+msgid "<strong>Project Code</strong>"
+msgstr "<strong>專案代號</strong>"
+
+#. module: project_code
+#: model_terms:ir.ui.view,arch_db:project_code.project_code_in_mrp_document
+msgid "<strong>Project Code</strong><br/>"
+msgstr "<strong>專案代號</strong>"
+
+#. module: project_code
+#: model_terms:ir.ui.view,arch_db:project_code.project_code_report_delivery_document
+#: model_terms:ir.ui.view,arch_db:project_code.project_code_report_picking
+msgid "<strong>Project Stage:</strong>"
+msgstr "<strong>專案階段</strong>"
+
+#. module: project_code
+#: model_terms:ir.ui.view,arch_db:project_code.project_code_in_sales_order_document
+#: model_terms:ir.ui.view,arch_db:project_code.report_invoice_document_custom
+#: model_terms:ir.ui.view,arch_db:project_code.report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:project_code.report_purchasequotation_document
+msgid "<strong>Project Stage</strong>"
+msgstr "<strong>專案階段</strong>"
+
+#. module: project_code
+#: model_terms:ir.ui.view,arch_db:project_code.project_code_in_mrp_document
+msgid "<strong>Project Stage</strong><br/>"
+msgstr "<strong>專案階段</strong>"
+
+#. module: project_code
+#: model:ir.model.fields,field_description:project_code.field_project_code__name
+msgid "Code"
+msgstr "專案代號"
+
+#. module: project_code
+#: model:ir.model.fields,field_description:project_code.field_project_code__create_uid
+msgid "Created by"
+msgstr "建立者"
+
+#. module: project_code
+#: model:ir.model.fields,field_description:project_code.field_project_code__create_date
+msgid "Created on"
+msgstr "建立於"
+
+#. module: project_code
+#: model:ir.model.fields,field_description:project_code.field_project_code__description
+msgid "Description"
+msgstr "敘述"
+
+#. module: project_code
+#: model:ir.model.fields,help:project_code.field_project_code__description
+msgid "Description of Project Code."
+msgstr "專案代號敘述"
+
+#. module: project_code
+#: model:ir.model.fields,field_description:project_code.field_project_code__display_name
+msgid "Display Name"
+msgstr "顯示名稱"
+
+#. module: project_code
+#: model:ir.model.fields,field_description:project_code.field_project_code__id
+msgid "ID"
+msgstr "ID"
+
+#. module: project_code
+#: model:ir.model,name:project_code.model_account_move
+msgid "Journal Entry"
+msgstr "日記帳分錄"
+
+#. module: project_code
+#: model:ir.model.fields,field_description:project_code.field_project_code____last_update
+msgid "Last Modified on"
+msgstr "最後修改於"
+
+#. module: project_code
+#: model:ir.model.fields,field_description:project_code.field_project_code__write_uid
+msgid "Last Updated by"
+msgstr "最後修改者"
+
+#. module: project_code
+#: model:ir.model.fields,field_description:project_code.field_project_code__write_date
+msgid "Last Updated on"
+msgstr "最後更新於"
+
+#. module: project_code
+#: model:ir.model.fields,help:project_code.field_project_code__name
+msgid "Name of Project Code."
+msgstr "專案代號名稱"
+
+#. module: project_code
+#: model:ir.model,name:project_code.model_mrp_production
+msgid "Production Order"
+msgstr "製令"
+
+#. module: project_code
+#: model:ir.model,name:project_code.model_project_code
+#: model:ir.model.fields,field_description:project_code.field_account_bank_statement_line__project_code
+#: model:ir.model.fields,field_description:project_code.field_account_move__project_code
+#: model:ir.model.fields,field_description:project_code.field_account_payment__project_code
+#: model:ir.model.fields,field_description:project_code.field_mrp_production__project_code
+#: model:ir.model.fields,field_description:project_code.field_purchase_order__project_code
+#: model:ir.model.fields,field_description:project_code.field_sale_advance_payment_inv__project_code
+#: model:ir.model.fields,field_description:project_code.field_sale_order__project_code
+#: model:ir.model.fields,field_description:project_code.field_stock_picking__project_code
+#: model_terms:ir.ui.view,arch_db:project_code.view_purchase_order_form_add_project_code_stage
+msgid "Project Code"
+msgstr "專案代號"
+
+#. module: project_code
+#: model:ir.ui.menu,name:project_code.action_menu_project_code_menu_crud
+msgid "Project Codes Action Menu"
+msgstr "專案代號選單"
+
+#. module: project_code
+#: model:ir.actions.act_window,name:project_code.action_menu_project_code
+msgid "Project Codes Menu"
+msgstr "專案代號選單"
+
+#. module: project_code
+#: model:ir.model.fields,field_description:project_code.field_account_bank_statement_line__project_stage
+#: model:ir.model.fields,field_description:project_code.field_account_move__project_stage
+#: model:ir.model.fields,field_description:project_code.field_account_payment__project_stage
+#: model:ir.model.fields,field_description:project_code.field_mrp_production__project_stage
+#: model:ir.model.fields,field_description:project_code.field_purchase_order__project_stage
+#: model:ir.model.fields,field_description:project_code.field_sale_advance_payment_inv__project_stage
+#: model:ir.model.fields,field_description:project_code.field_sale_order__project_stage
+#: model:ir.model.fields,field_description:project_code.field_stock_picking__project_stage
+#: model_terms:ir.ui.view,arch_db:project_code.view_purchase_order_form_add_project_code_stage
+msgid "Project Stage"
+msgstr "專案階段"
+
+#. module: project_code
+#: model:ir.model,name:project_code.model_purchase_order
+msgid "Purchase Order"
+msgstr "採購訂單"
+
+#. module: project_code
+#: model:ir.model,name:project_code.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "銷售預收憑單"
+
+#. module: project_code
+#: model:ir.model,name:project_code.model_sale_order
+msgid "Sales Order"
+msgstr "銷售訂單"
+
+#. module: project_code
+#: model:ir.model.fields,help:project_code.field_account_bank_statement_line__project_code
+#: model:ir.model.fields,help:project_code.field_account_move__project_code
+#: model:ir.model.fields,help:project_code.field_account_payment__project_code
+#: model:ir.model.fields,help:project_code.field_mrp_production__project_code
+#: model:ir.model.fields,help:project_code.field_purchase_order__project_code
+#: model:ir.model.fields,help:project_code.field_sale_advance_payment_inv__project_code
+#: model:ir.model.fields,help:project_code.field_sale_order__project_code
+#: model:ir.model.fields,help:project_code.field_stock_picking__project_code
+msgid "Select a project code."
+msgstr "請選擇一個專案代號"
+
+#. module: project_code
+#: model:ir.model.fields,help:project_code.field_account_bank_statement_line__project_stage
+#: model:ir.model.fields,help:project_code.field_account_move__project_stage
+#: model:ir.model.fields,help:project_code.field_account_payment__project_stage
+#: model:ir.model.fields,help:project_code.field_mrp_production__project_stage
+#: model:ir.model.fields,help:project_code.field_purchase_order__project_stage
+#: model:ir.model.fields,help:project_code.field_sale_advance_payment_inv__project_stage
+#: model:ir.model.fields,help:project_code.field_sale_order__project_stage
+#: model:ir.model.fields,help:project_code.field_stock_picking__project_stage
+msgid "Select a project stage."
+msgstr "請選擇一個專案階段"
+
+#. module: project_code
+#: model:ir.model,name:project_code.model_stock_picking
+msgid "Transfer"
+msgstr "調動"

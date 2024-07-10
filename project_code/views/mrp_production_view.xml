@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <!-- MRP Production Form View: Add project code and project stage -->
+        <record id="view_purchase_order_form_add_project_code_stage" model="ir.ui.view">
+            <field name="name">mrp.production.form.inherit</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='bom_id']" position="after">
+                    <field name="project_code" />
+                    <field name="project_stage"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

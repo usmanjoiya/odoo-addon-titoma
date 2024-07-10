@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <!-- Picking Form View: Add Project Code and Project Stage. -->
+        <record id="view_picking_add_project_code_stage" model="ir.ui.view">
+            <field name="name">Picking Form with Project Code and Stage</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//field[@name='partner_id']/following-sibling::field[1]" position="after">
+                    <field name="project_code" />
+                    <field name="project_stage"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

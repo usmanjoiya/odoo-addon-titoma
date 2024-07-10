@@ -1,0 +1,29 @@
+<odoo>
+	<data>
+		<!-- Invoice Form View: Add Project Code and Project Stage. -->
+		<record id="view_invoice_add_project_code_stage" model="ir.ui.view">
+			<field name="name">Invoice Form with Project Code and Stage</field>
+			<field name="model">account.move</field>
+			<field name="inherit_id" ref="account.view_move_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//form//field[@name='partner_id']/following-sibling::field[1]" position="after">
+					<field name="invoice_origin" invisible="1"/>
+					<field name="project_code" string="Project Code" related="invoice_origin.project_code" widget="many2one_tags"/>
+					<field name="project_stage" string="Project Stage" related="invoice_origin.project_stage" widget="many2one_tags"/>
+				</xpath>
+			</field>
+		</record>
+		<!-- Invoice Form View: Add Project Code and Project Stage. -->
+		<record id="view_invoice_add_project_code_stage" model="ir.ui.view">
+			<field name="name">Invoice Form with Project Code and Stage</field>
+			<field name="model">account.move</field>
+			<field name="inherit_id" ref="account.view_move_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='payment_reference']" position="after">
+					<field name="project_code" />
+					<field name="project_stage"/>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

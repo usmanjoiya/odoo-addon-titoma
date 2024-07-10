@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <!-- S/O Document:  Add project code and project stage -->
+        <!-- source: addons/sale/report/sale_report_templates -->
+        <template id="project_code_in_sales_order_document" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//div[@id='informations']" position="before">
+                <div class="row mt32 o_subtotal_footer_separator">
+                    <div class="col-8"/>
+                    <div class="col-4">
+                        <table class="table table-sm o_main_table border-black">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Project Code</strong></td>
+                                    <td><span t-field="doc.project_code"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Project Stage</strong></td>
+                                    <td><span t-field="doc.project_stage"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

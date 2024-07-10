@@ -1,8 +1,0 @@
-
-=> 15.0.0.1 : Make a new video fot this module.
-
-=> 15.0.0.2 : dt. 28th jan. 2022 Fixed + Improvements
-    - Fixed and Improved Import journal entry flow
-
-==> 15.0.0.3 : Add a new CSV & Excel button for(Download Sample CSV & Excel file) in  wizard 
-15.0.0.4 ==>fixed issue of traceback while importing invoice with tax.

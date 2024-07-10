@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_project_code_sales,project_code_sales,model_project_code,sales_team.group_sale_manager,1,1,1,1
+access_project_code_purchase,project_code_purchase,model_project_code,purchase.group_purchase_manager,1,1,1,1
+access_project_code_stock,project_code_stock,model_project_code,stock.group_stock_manager,1,1,1,1
+access_project_code_account,project_code_account,model_project_code,account.group_account_manager,1,1,1,1
+access_project_code_baseuser,project_code_baseuser,model_project_code,base.group_user,1,0,0,0

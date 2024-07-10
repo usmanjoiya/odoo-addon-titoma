@@ -1,0 +1,38 @@
+.titoma_table {
+  thead{
+    tr{
+      th{
+        border: 1px solid black;
+        border-top: none;
+        border-spacing: 0px;
+      }
+    }
+  }
+  tbody{
+   tr{
+      td {
+        border: 1px solid black;
+        border-top: none;
+        border-bottom: none;
+        border-spacing: 0px;
+        &.last_line {
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+        }
+        padding: 3px;
+      }
+    }
+  }
+}
+.titoma_compnayinfo_table {
+  border: 3px solid black;
+  tr{
+    td {
+      border-bottom: 1px solid black;
+      border-spacing: 0px;
+    }
+  }
+}
+div{
+  font-size:13px;
+}

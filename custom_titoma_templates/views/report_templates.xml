@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+        <template id="external_layout_titoma">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <t t-if="o and 'partner_id' in o and o.partner_id and o.partner_id.parent_id and o.partner_id.parent_id.image_1920">
+                <t t-set="partner_logo" t-value="o.partner_id.parent_id.image_1920" />
+            </t>
+            <t t-elif="o and 'partner_id' in o and o.partner_id and o.partner_id.image_1920">
+                <t t-set="partner_logo" t-value="o.partner_id.image_1920" />
+            </t>
+            <t t-else="else">
+                <t t-set="partner_logo" t-value="False"/>
+            </t>
+
+            <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+                <div class="row">
+                    <div class="col-3 mb4 o_cp_top_right">
+                        <t t-if="partner_logo">
+                            <img t-att-src="image_data_uri(partner_logo)" style="max-height: 45px;float: left;" alt="Customer Logo"/>
+                        </t>
+                    </div>
+                    <div class="col-6 mb4" />
+                    <div class="col-3 mb4 o_cp_top_right" >
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;float: right;" alt="Company Logo"/>
+                    </div>
+                </div>
+            </div>
+
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout {{  'o_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <div class="">
+                    <t t-call="web.address_layout"/>
+                </div>
+                <t t-out="0"/>
+            </div>
+
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <ul class="list-inline mb4">
+                        <div t-field="company.report_footer"/>
+                    </ul>
+
+                    <div t-if="report_type == 'pdf'" class="text-muted small">
+                        Page: <span class="page"/> / <span class="topage"/>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Titoma papper format -->
+        <record id="paperformat_euro_a4_titoma" model="report.paperformat">
+            <field name="name">A4 (Titoma)</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">20</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_spacing">15</field>
+            <field name="disable_shrinking" eval="True"/>
+            <field name="dpi">90</field>
+        </record>
+	</data>
+</odoo>
